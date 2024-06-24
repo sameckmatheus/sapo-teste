@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['user_id'] = $userController->user->id;
         $_SESSION['user_type'] = $userController->user->tipo;
-        header("Location: views/list_requests.php");
+        header("Location: views/home.php");
         exit();
     } else {
         echo "Erro ao fazer login.";

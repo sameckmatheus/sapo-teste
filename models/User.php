@@ -52,9 +52,16 @@ class User {
             $this->senha = $row['senha'];
             $this->tipo = $row['tipo'];
 
+            // Debug: Verificando a senha
             if (password_verify($this->senha_raw, $this->senha)) {
                 return true;
+            } else {
+                echo "Senha incorreta.";
+                echo "Senha fornecida: " . $this->senha_raw;
+                echo "Senha armazenada: " . $this->senha;
             }
+        } else {
+            echo "Usuário não encontrado.";
         }
         return false;
     }
